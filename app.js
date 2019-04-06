@@ -46,10 +46,14 @@ interact('.draggable')
 
   // this is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener;
-function exit() {
-    document.getElementById("drag-1").style.display = "none";
+function exit(a) {
+    document.getElementById("drag-" + a).style.display = "none";
 }
 
-function minimize() {
-    document.getElementById("drag-1").style.transform = "scale(0)";
+function minimize(a) {
+    document.getElementById("drag-" + a).style.display = "none";
+}
+function openNotepad(a){
+  document.getElementById("drag-" + a).style.display = "block";
+  
 }

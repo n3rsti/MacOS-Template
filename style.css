@@ -64,7 +64,7 @@ body {
     animation: loading 2s;
 }
 
- @keyframes loading {
+/* @keyframes loading {
     0% {
         width: 0;
     }
@@ -84,7 +84,7 @@ body {
         opacity: 0;
         z-index: 0;
     }
-}
+} */
 .header {
     width: 100vw;
     height: 100vh;
@@ -126,6 +126,14 @@ body {
     -webkit-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
     z-index: 2;
+}
+.title {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+}
+#drag-1 {
+    display: none;
 }
 
 #window {
@@ -207,19 +215,27 @@ body {
 
 .apps {
     color: white;
-    position: absolute;
+    position: relative;
     cursor: pointer;
     z-index: 1;
 }
 
 .notepad {
-    left: 2%;
-    top: 5%;
+    top: calc(50% - 300px);
+    left: calc(50% - 250px);
+    width: 500px;
+    height: 600px;
+    background: white;
+    display: none;
+}
+.notepad-app {
+    left: 1%;
+    top: 4%;
 }
 
 .app-title {
     margin: 2px;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 20px;
     cursor: default;
     border-radius: 5px;
@@ -242,4 +258,20 @@ body {
     background: none;
     border: 0;
     margin: 10px;
+}
+.add {
+    width: 60px;
+    height: 60px;
+    border-radius: 9999px;
+    border: 0;
+    position: absolute;
+    bottom: 1vh;
+    right: 1vh;
+    background: #2bcf38;
+    outline: none;
+    cursor: pointer;
+}
+.fa-plus {
+    color: white;
+    font-size: 30px;
 }

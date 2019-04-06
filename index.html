@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="img/black-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/interactjs@next/dist/interact.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
@@ -25,18 +27,29 @@
         </nav>
         <div class="app draggable" id="drag-1">
             <nav class="app-nav">
-                <button class="red" onclick="exit()"></button>
-                <button class="yellow" onclick="minimize()"></button>
+                <button class="red" onclick="exit(1)"></button>
+                <button class="yellow" onclick="minimize(1)"></button>
                 <button class="green"></button>
             </nav>
             <div class="container"></div>
         </div>
+        <div class="draggable notepad app" id="drag-2">
+            <nav class="app-nav">
+                <button class="red" onclick="exit(2)"></button>
+                <button class="yellow" onclick="minimize(2)"></button>
+                <button class="green"></button>
+            </nav>
+            <h2 class="title">Notepad</h2>
+            <button class="add">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
         <nav class="bottom-nav">
-            <button>
+            <button onclick="openNotepad(2)">
                 <img src="img/notepad.png" alt="">
             </button>
         </nav>
-        <div class="apps draggable notepad" id="drag-1">
+        <div class="apps draggable notepad-app">
             <img src="img/notepad.png" alt="Notepad icon" class="app-icon">
             <h2 class="app-title">Notepad</h2>
         </div>
