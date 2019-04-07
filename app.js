@@ -61,12 +61,44 @@ function newNote(){
   document.getElementById("drag-2").classList.remove("draggable");
   document.getElementById("newNote").style.display = "flex";
 }
+var titles = [
+
+];
+var descriptions = [
+
+];
+var contents = [
+
+];
+var count = 0;
 function save(){
   document.getElementById("drag-2").classList.add("draggable");
   document.getElementById("newNote").style.display = "none";
+  var noteDiv = document.getElementById("container");
+  var newNote = document.createElement('div');
+  newNote.classList.add("note");
+  var newTitle = document.createElement('div');
+  newTitle.classList.add("note-title");
+  newTitle.id = "note-title";
+  var newDescription = document.createElement('div');
+  newDescription.classList.add('note-description');
+  newDescription.id = "note-description";
+
+  noteDiv.append(newNote);
+  newNote.append(newTitle);
+  newNote.append(newDescription);
+
   var description = document.getElementById("newDescription").value;
   var title = document.getElementById("newNote-title").value;
   var content = document.getElementById("newNote-content").value;
-  document.getElementById("note-description").innerHTML = description;
-  document.getElementById("note-title").innerHTML = title;
+  titles.push(title);
+  descriptions.push(description);
+ /* document.getElementById("note-description").innerText = descriptions[count];
+  document.getElementById("note-title").innerText = titles[count]; */
+  newTitle.innerText = titles[count];
+  newDescription.innerText = descriptions[count];
+  count++;
+  description = document.getElementById("newDescription").value = "";
+  title = document.getElementById("newNote-title").value = "";
+  content = document.getElementById("newNote-content").value = "";
 }

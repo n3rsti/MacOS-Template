@@ -259,6 +259,7 @@ body {
     background: none;
     border: 0;
     margin: 10px;
+    outline: none;
 }
 .add {
     width: 60px;
@@ -286,6 +287,7 @@ body {
     border: 2px solid #2bcf38;
     display: flex;
     overflow: hidden;
+    margin-bottom: 5px;
 }
 .note-title {
     width: 30%;
