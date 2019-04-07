@@ -57,3 +57,16 @@ function openNotepad(a){
   document.getElementById("drag-" + a).style.display = "block";
   
 }
+function newNote(){
+  document.getElementById("drag-2").classList.remove("draggable");
+  document.getElementById("newNote").style.display = "flex";
+}
+function save(){
+  document.getElementById("drag-2").classList.add("draggable");
+  document.getElementById("newNote").style.display = "none";
+  var description = document.getElementById("newDescription").value;
+  var title = document.getElementById("newNote-title").value;
+  var content = document.getElementById("newNote-content").value;
+  document.getElementById("note-description").innerHTML = description;
+  document.getElementById("note-title").innerHTML = title;
+}
