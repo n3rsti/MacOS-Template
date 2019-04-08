@@ -64,7 +64,7 @@ body {
     animation: loading 2s;
 }
 
-/* @keyframes loading {
+ @keyframes loading {
     0% {
         width: 0;
     }
@@ -84,7 +84,7 @@ body {
         opacity: 0;
         z-index: 0;
     }
-} */
+} 
 .header {
     width: 100vw;
     height: 100vh;
@@ -298,10 +298,11 @@ body {
     border-right: 2px solid #2bcf38;
     font-family: 'Raleway', sans-serif;
     font-size: 25px;
+    text-align: center;
 }
 .note-description {
-    width: 70%;
     height: 100%;
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -338,4 +339,37 @@ body {
 }
 .save:hover {
     transform: rotate(360deg);
+}
+.left-note {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid #2bcf38;
+    color: red;
+}
+.left-note button {
+    color: white;
+    outline: none;
+    border: 0;
+    border-radius: 9999px;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.left-note button:hover i {
+    transform: rotate(360deg);
+    transition: .5s;
+}
+.delete-button {
+    background: red;
+}
+.view-button {
+    background: #2bcf38;
+    margin-bottom: 5px;
 }

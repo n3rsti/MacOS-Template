@@ -83,18 +83,36 @@ function save(){
   var newDescription = document.createElement('div');
   newDescription.classList.add('note-description');
   newDescription.id = "note-description";
+  var leftNote = document.createElement('div');
+  leftNote.classList.add('left-note');
+  var viewIcon = document.createElement('i');
+  viewIcon.classList.add('fas');
+  viewIcon.classList.add('fa-eye');
+
+  var deleteIcon = document.createElement('i');
+  deleteIcon.classList.add('fas');
+  deleteIcon.classList.add('fa-times');
+
+  var newNoteButtonView = document.createElement('button');
+  newNoteButtonView.classList.add('view-button');
+
+  var deleteButton = document.createElement('button');
+  deleteButton.classList.add('delete-button');
 
   noteDiv.append(newNote);
   newNote.append(newTitle);
   newNote.append(newDescription);
+  newNote.append(leftNote);
+  leftNote.append(newNoteButtonView);
+  newNoteButtonView.append(viewIcon);
+  leftNote.append(deleteButton);
+  deleteButton.append(deleteIcon);
 
   var description = document.getElementById("newDescription").value;
   var title = document.getElementById("newNote-title").value;
   var content = document.getElementById("newNote-content").value;
   titles.push(title);
   descriptions.push(description);
- /* document.getElementById("note-description").innerText = descriptions[count];
-  document.getElementById("note-title").innerText = titles[count]; */
   newTitle.innerText = titles[count];
   newDescription.innerText = descriptions[count];
   count++;
