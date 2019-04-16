@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="img/black-logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600|Montserrat:600" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/interactjs@next/dist/interact.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
@@ -17,7 +17,7 @@
 
 <body>
     <div class="loading">
-        <img src="img/apple-logo.png" alt="Apple logo" class="loading-img">
+        <img src="img/apple-logo.png" alt="Apple logo" class="loading-img" id="apple-img">
         <div class="loading-tab">
             <hr>
         </div>
@@ -25,6 +25,7 @@
     <header class="header">
         <nav class="nav">
             <img src="img/black-logo.png" alt="">
+            <h3 id="time"></h3>
         </nav>
         <div class="draggable notepad app" id="drag-2">
             <nav class="app-nav">
@@ -33,6 +34,7 @@
                 <button class="green"></button>
             </nav><div class="container" id="container">
             <h2 class="title">Notepad</h2> 
+            
             <div class="newNote" id="newNote">
                 <input type="text" class="newNote-title newNote-content" id="newNote-title" placeholder="Title" maxlength="10">
                 <textarea id="newDescription" cols="30" rows="2" class="newNote-content" placeholder="Description"
@@ -55,7 +57,7 @@
                 <img src="img/notepad.png" alt="">
             </button>
         </nav>
-        <button class="apps draggable notepad-app" onclick="openNotepad(2)">
+        <button class="apps draggable notepad-app" ondblclick="openNotepad(2)">
             <img src="img/notepad.png" alt="Notepad icon" class="app-icon">
             <h2 class="app-title">Notepad</h2>
         </button>

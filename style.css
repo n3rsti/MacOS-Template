@@ -64,6 +64,7 @@ body {
     animation: loading 2s;
 }
 
+/*
  @keyframes loading {
     0% {
         width: 0;
@@ -84,7 +85,7 @@ body {
         opacity: 0;
         z-index: 0;
     }
-} 
+}  */
 .header {
     width: 100vw;
     height: 100vh;
@@ -98,6 +99,7 @@ body {
     background: rgba(255, 255, 255, .9);
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .nav img {
@@ -127,11 +129,13 @@ body {
     transform: translate(0px, 0px);
     z-index: 2;
 }
+
 .title {
     text-align: center;
     font-family: 'Raleway', sans-serif;
     font-size: 30px;
 }
+
 #drag-1 {
     display: none;
 }
@@ -154,17 +158,6 @@ body {
     display: none;
 }
 
-.red {
-    background: #f95b55;
-}
-
-.yellow {
-    background: #febd28;
-}
-
-.green {
-    background: #2bcf38;
-}
 
 .container {
     width: 100%;
@@ -173,6 +166,8 @@ body {
     bottom: 0;
     left: 0;
     cursor: default;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .bottom-nav {
@@ -199,9 +194,11 @@ body {
     outline: none;
     border: 0;
 }
+
 .apps:active .app-icon {
     border: 1px solid #424142;
 }
+
 .apps:active .app-title {
     background: #005ee1;
 }
@@ -229,6 +226,7 @@ body {
     background: white;
     display: none;
 }
+
 .notepad-app {
     left: 1%;
     top: 4%;
@@ -261,47 +259,58 @@ body {
     margin: 10px;
     outline: none;
 }
+
 .add {
     width: 60px;
     height: 60px;
     border-radius: 9999px;
     border: 0;
-    position: absolute;
+    position: fixed;
     bottom: 1vh;
     right: 1vh;
     background: #2bcf38;
     outline: none;
     cursor: pointer;
 }
+
 .add:hover .fa-plus {
     transform: rotate(90deg);
 }
+
 .add .fas {
     color: white;
     font-size: 30px;
     transition: .3s;
 }
+
 .note {
     width: 100%;
-    height: 80px;
+    max-height: 330px;
+    min-height: 80px;
+    height: auto;
     border: 2px solid #2bcf38;
+    border-bottom: 0;
     display: flex;
+    flex-direction: column;
     overflow: hidden;
     margin-bottom: 5px;
 }
+
 .note-title {
     width: 30%;
-    height: 100%;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-right: 2px solid #2bcf38;
+    border-bottom: 2px solid #2bcf38;
     font-family: 'Raleway', sans-serif;
     font-size: 25px;
     text-align: center;
 }
+
 .note-description {
-    height: 100%;
+    height: 80px;
     width: 60%;
     display: flex;
     align-items: center;
@@ -309,7 +318,42 @@ body {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     font-size: 15px;
+    border-bottom: 2px solid #2bcf38;
 }
+
+.descriptions {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    overflow: hidden;
+
+}
+
+.content {
+    width: 100%;
+    height: 0;
+    max-height: 240px;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    align-items: center;
+    font-size: 25px;
+    border: 0;
+    transition: .3s;
+    border-bottom: 2px solid #2bcf38;
+}
+
+.content-span {
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    overflow-wrap: break-word;
+    padding: 0;
+    margin: 10% 0 10% 10%;
+    border: 0;
+    transition: .3s;
+}
+
 .newNote {
     height: calc(100% - 20px);
     width: 100%;
@@ -323,9 +367,11 @@ body {
     flex-direction: column;
     font-size: 20px;
 }
+
 .newNote-title {
     height: 50px;
 }
+
 .newNote-content {
     width: 80%;
     margin: 5px;
@@ -333,22 +379,28 @@ body {
     border: 2px solid #2bcf38;
     font-family: 'Raleway', sans-serif;
 }
+
 .save {
     z-index: 3;
     transition: .4s;
 }
+
 .save:hover {
     transform: rotate(360deg);
 }
+
 .left-note {
     width: 10%;
+    height: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-left: 2px solid #2bcf38;
+    border-bottom: 2px solid #2bcf38;
     color: red;
 }
+
 .left-note button {
     color: white;
     outline: none;
@@ -362,14 +414,25 @@ body {
     justify-content: center;
     cursor: pointer;
 }
+
 .left-note button:hover i {
     transform: rotate(360deg);
     transition: .5s;
 }
+
 .delete-button {
     background: red;
 }
+
 .view-button {
     background: #2bcf38;
     margin-bottom: 5px;
+}
+
+#time {
+    position: absolute;
+    margin: 0;
+    right: 3%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
