@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="img/black-logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:600|Montserrat:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600|Montserrat:600|Arimo:400" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/interactjs@next/dist/interact.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
@@ -29,9 +29,9 @@
         </nav>
         <div class="draggable notepad app" id="drag-2">
             <nav class="app-nav">
-                <button class="red" onclick="exit(2)"></button>
-                <button class="yellow" onclick="minimize(2)"></button>
-                <button class="green"></button>
+                <button class="red button" onclick="exit(2)"></button>
+                <button class="yellow button" onclick="minimize(2)"></button>
+                <button class="green button"></button>
             </nav><div class="container" id="container">
             <h2 class="title">Notepad</h2> 
             
@@ -52,9 +52,51 @@
             </button>
         </div>
         </div>
+        <div class="calculator draggable" id="drag-3">
+            <nav class="app-nav">
+                <button class="red button" onclick="exit(3)"></button>
+                <button class="yellow button" onclick="minimize(3)"></button>
+                <button class="green button"></button>
+            </nav>
+            <div class="result"></div>
+            <div class="row">
+                <button class="calc-button">C</button>
+                <button class="calc-button">D</button>
+                <button class="calc-button">%</button>
+                <button class="calc-button calc-right">÷</button>
+            </div>
+            <div class="row">
+                <button class="calc-button">7</button>
+                <button class="calc-button">8</button>
+                <button class="calc-button">9</button>
+                <button class="calc-button calc-right">x</button>
+            </div>
+            <div class="row">
+                <button class="calc-button">4</button>
+                <button class="calc-button">5</button>
+                <button class="calc-button">6</button>
+                <button class="calc-button calc-right">-</button>
+            </div>
+            <div class="row">
+                <button class="calc-button">1</button>
+                <button class="calc-button">2</button>
+                <button class="calc-button">3</button>
+                <button class="calc-button calc-right">+</button>
+            </div>
+            <div class="row">
+                <button class="calc-button zero">0</button>
+                <button class="calc-button">.</button>
+                <button class="calc-button calc-right">
+                    =
+                </button>
+            </div>
+        </div>
         <nav class="bottom-nav">
             <button onclick="openNotepad(2)">
                 <img src="img/notepad.png" alt="">
+            </button>
+            <button onclick="openNotepad(3)">
+                <img src="img/calculator-icon.png" alt="">
             </button>
         </nav>
         <button class="apps draggable notepad-app" ondblclick="openNotepad(2)">

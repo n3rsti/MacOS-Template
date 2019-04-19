@@ -82,10 +82,8 @@ function exit(a) {
 function minimize(a) {
   document.getElementById("drag-" + a).style.display = "none";
 }
-
 function openNotepad(a) {
-  document.getElementById("drag-" + a).style.display = "block";
-
+  document.getElementById("drag-" + a).style.display = "flex";
 }
 
 function newNote() {
@@ -105,6 +103,7 @@ var count = 0;
 
 
 var opened = false;
+
 function save() {
   document.getElementById("drag-2").classList.add("draggable");
   document.getElementById("newNote").style.display = "none";
@@ -144,7 +143,7 @@ function save() {
 
   var contentP = document.createElement('h4');
   contentP.classList.add('content-span');
-  if (count < 5) {
+  if (count < 10) {
 
     noteDiv.append(newNote);
     newNote.append(newDescriptions)
@@ -176,13 +175,12 @@ function save() {
   deleteButton.onclick = function () {
     noteDiv.removeChild(newNote);
   }
-  
+
   newNoteButtonView.onclick = function () {
     if (opened == false) {
       readContent.style.height = "auto";
       opened = true;
-    }
-    else {
+    } else {
       readContent.style.height = "0";
       opened = false;
     }
