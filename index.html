@@ -58,35 +58,37 @@
                 <button class="yellow button" onclick="minimize(3)"></button>
                 <button class="green button"></button>
             </nav>
-            <div class="result"></div>
+            <div class="result">
+                <span class="result-span" id="result-span"></span>
+            </div>
             <div class="row">
-                <button class="calc-button">C</button>
-                <button class="calc-button">D</button>
+                <button class="calc-button" onclick="deleteCalc()">C</button>
+                <button class="calc-button" onclick="backspace()">D</button>
                 <button class="calc-button">%</button>
-                <button class="calc-button calc-right">÷</button>
+                <button class="calc-button calc-right" onclick="addSign('/')">÷</button>
             </div>
             <div class="row">
-                <button class="calc-button">7</button>
-                <button class="calc-button">8</button>
-                <button class="calc-button">9</button>
-                <button class="calc-button calc-right">x</button>
+                <button class="calc-button" onclick="addNum(7)">7</button>
+                <button class="calc-button" onclick="addNum(8)">8</button>
+                <button class="calc-button" onclick="addNum(9)">9</button>
+                <button class="calc-button calc-right" onclick="addSign('*')">x</button>
             </div>
             <div class="row">
-                <button class="calc-button">4</button>
-                <button class="calc-button">5</button>
-                <button class="calc-button">6</button>
-                <button class="calc-button calc-right">-</button>
+                <button class="calc-button" onclick="addNum(4)">4</button>
+                <button class="calc-button" onclick="addNum(5)">5</button>
+                <button class="calc-button" onclick="addNum(6)">6</button>
+                <button class="calc-button calc-right" onclick="addSign('-')">-</button>
             </div>
             <div class="row">
-                <button class="calc-button">1</button>
-                <button class="calc-button">2</button>
-                <button class="calc-button">3</button>
-                <button class="calc-button calc-right">+</button>
+                <button class="calc-button"onclick=" addNum(1)">1 </button>
+                <button class="calc-button" onclick="addNum(2)">2</button>
+                <button class="calc-button" onclick="addNum(3)">3</button>
+                <button class="calc-button calc-right" onclick="addSign('+')">+</button>
             </div>
             <div class="row">
-                <button class="calc-button zero">0</button>
-                <button class="calc-button">.</button>
-                <button class="calc-button calc-right">
+                <button class="calc-button zero" onclick="addNum(0)">0</button>
+                <button class="calc-button" onclick="addSign('.')">.</button>
+                <button class="calc-button calc-right" onclick="result()">
                     =
                 </button>
             </div>

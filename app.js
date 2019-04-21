@@ -8,6 +8,8 @@ window.onload = function time() {
   document.getElementById("time").innerHTML = hour + ":" + minute;
 
 
+
+
 }
 
 
@@ -190,4 +192,29 @@ function save() {
 
 
 
+}
+
+var resultSpan = document.getElementById('result-span');
+var signBol = false;
+function addNum(num){
+  document.getElementById('result-span').innerHTML += num;
+  signBol = false;
+}
+function addSign(sign){
+  if(signBol == false){
+    document.getElementById('result-span').innerHTML += sign;
+    
+  }
+  signBol = true;
+  
+}
+
+function result(){
+  document.getElementById('result-span').innerHTML = eval(document.getElementById('result-span').innerHTML);
+}
+function backspace(){
+  document.getElementById('result-span').innerHTML = document.getElementById('result-span').innerHTML.substring(0, document.getElementById('result-span').innerHTML.length - 1);
+}
+function deleteCalc(){
+  document.getElementById('result-span').innerHTML = '';
 }
