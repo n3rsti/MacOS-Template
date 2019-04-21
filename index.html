@@ -62,10 +62,12 @@
                 <span class="result-span" id="result-span"></span>
             </div>
             <div class="row">
-                <button class="calc-button" onclick="deleteCalc()">C</button>
-                <button class="calc-button" onclick="backspace()">D</button>
-                <button class="calc-button">%</button>
+                <button class="calc-button calc-right" onclick="deleteCalc()">C</button>
+                
                 <button class="calc-button calc-right" onclick="addSign('/')">÷</button>
+                <button class="calc-button zero calc-right" onclick="backspace()">
+                    <i class="fas fa-backspace"></i>
+                </button>
             </div>
             <div class="row">
                 <button class="calc-button" onclick="addNum(7)">7</button>
@@ -104,6 +106,10 @@
         <button class="apps draggable notepad-app" ondblclick="openNotepad(2)">
             <img src="img/notepad.png" alt="Notepad icon" class="app-icon">
             <h2 class="app-title">Notepad</h2>
+        </button>
+        <button class="apps draggable calc" ondblclick="openNotepad(3)">
+            <img src="img//calculator-icon.png" alt="Calculator icon" class="app-icon">
+            <h2 class="app-title">Calculator</h2>
         </button>
     </header>
 

@@ -1,0 +1,26 @@
+{
+  "name": "macos-template",
+  "version": "1.0.0",
+  "description": "Fanmade macOS test version for browsers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n3rsti/MacOS-Template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n3rsti/MacOS-Template/issues"
+  },
+  "homepage": "https://github.com/n3rsti/MacOS-Template#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.3",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^4.0.1",
+    "gulp-babel": "^8.0.0"
+  }
+}

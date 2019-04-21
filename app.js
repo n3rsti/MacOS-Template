@@ -1,7 +1,7 @@
 window.onload = function time() {
-  var time = new Date();
-  var hour = time.getHours();
-  var minute = time.getMinutes()
+  let time = new Date();
+  let hour = time.getHours();
+  let minute = time.getMinutes()
   if (minute < 10) {
     minute = "0" + minute;
   }
@@ -48,7 +48,7 @@ interact('.draggable')
     onmove: dragMoveListener,
     // call this function on every dragend event
     onend: function (event) {
-      var textEl = event.target.querySelector('p');
+      let textEl = event.target.querySelector('p');
 
       textEl && (textEl.textContent =
         'moved a distance of ' +
@@ -59,7 +59,7 @@ interact('.draggable')
   });
 
 function dragMoveListener(event) {
-  var target = event.target,
+  let target = event.target,
     // keep the dragged position in the data-x/data-y attributes
     x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
     y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
@@ -92,58 +92,58 @@ function newNote() {
   document.getElementById("drag-2").classList.remove("draggable");
   document.getElementById("newNote").style.display = "flex";
 }
-var titles = [
+let titles = [
 
 ];
-var descriptions = [
+let descriptions = [
 
 ];
-var contents = [
+let contents = [
 
 ];
-var count = 0;
+let count = 0;
 
 
-var opened = false;
+let opened = false;
 
 function save() {
   document.getElementById("drag-2").classList.add("draggable");
   document.getElementById("newNote").style.display = "none";
-  var noteDiv = document.getElementById("container");
-  var newNote = document.createElement('div');
+  const noteDiv = document.getElementById("container");
+  const newNote = document.createElement('div');
   newNote.id = "newNote";
   newNote.classList.add("note");
-  var newDescriptions = document.createElement('div');
+  const newDescriptions = document.createElement('div');
   newDescriptions.classList.add('descriptions');
-  var newTitle = document.createElement('div');
+  const newTitle = document.createElement('div');
   newTitle.classList.add("note-title");
   newTitle.id = "note-title";
-  var newDescription = document.createElement('div');
+  const newDescription = document.createElement('div');
   newDescription.classList.add('note-description');
   newDescription.id = "note-description";
-  var newContent = document.createElement('div');
+  const newContent = document.createElement('div');
   newContent.classList.add('content');
-  var leftNote = document.createElement('div');
+  const leftNote = document.createElement('div');
   leftNote.classList.add('left-note');
-  var viewIcon = document.createElement('i');
+  const viewIcon = document.createElement('i');
   viewIcon.classList.add('fas');
   viewIcon.classList.add('fa-eye');
 
-  var deleteIcon = document.createElement('i');
+  const deleteIcon = document.createElement('i');
   deleteIcon.classList.add('fas');
   deleteIcon.classList.add('fa-times');
 
-  var newNoteButtonView = document.createElement('button');
+  const newNoteButtonView = document.createElement('button');
   newNoteButtonView.classList.add('view-button');
-  var deleteButton = document.createElement('button');
+  const deleteButton = document.createElement('button');
   deleteButton.classList.add('delete-button');
   deleteButton.id = "delete-button";
 
-  var readContent = document.createElement('div');
+  const readContent = document.createElement('div');
   readContent.classList.add('content');
   readContent.style.transition = ".3s";
 
-  var contentP = document.createElement('h4');
+  const contentP = document.createElement('h4');
   contentP.classList.add('content-span');
   if (count < 10) {
 
@@ -159,9 +159,9 @@ function save() {
     newNote.append(readContent);
     readContent.append(contentP);
 
-    var description = document.getElementById("newDescription").value;
-    var title = document.getElementById("newNote-title").value;
-    var content = document.getElementById("newNote-content").value;
+    const description = document.getElementById("newDescription").value;
+    const title = document.getElementById("newNote-title").value;
+    const content = document.getElementById("newNote-content").value;
     contents.push(content);
     titles.push(title);
     descriptions.push(description);
@@ -194,8 +194,8 @@ function save() {
 
 }
 
-var resultSpan = document.getElementById('result-span');
-var signBol = false;
+let resultSpan = document.getElementById('result-span');
+let signBol = false;
 function addNum(num){
   document.getElementById('result-span').innerHTML += num;
   signBol = false;
