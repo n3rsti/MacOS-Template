@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="img/black-logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="time.js/app.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:600|Montserrat:600|Arimo:400" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/interactjs@next/dist/interact.min.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -25,32 +26,34 @@
     <header class="header">
         <nav class="nav">
             <img src="img/black-logo.png" alt="">
-            <h3 id="time"></h3>
+            <h3 class ="time" id="second"></h3>
         </nav>
         <div class="draggable notepad app" id="drag-2">
             <nav class="app-nav">
                 <button class="red button" onclick="exit(2)"></button>
                 <button class="yellow button" onclick="minimize(2)"></button>
                 <button class="green button"></button>
-            </nav><div class="container" id="container">
-            <h2 class="title">Notepad</h2> 
-            
-            <div class="newNote" id="newNote">
-                <input type="text" class="newNote-title newNote-content" id="newNote-title" placeholder="Title" maxlength="10">
-                <textarea id="newDescription" cols="30" rows="2" class="newNote-content" placeholder="Description"
-                    maxlength="32"></textarea>
-                <textarea  id="newNote-content" cols="30" rows="10" class="newNote-content" placeholder="Content"
-                    maxlength="340"></textarea>
-                <button class="add save" onclick="save()">
-                    <i class="fas fa-check"></i>
+            </nav>
+            <div class="container" id="container">
+                <h2 class="title">Notepad</h2>
+
+                <div class="newNote" id="newNote">
+                    <input type="text" class="newNote-title newNote-content" id="newNote-title" placeholder="Title"
+                        maxlength="10">
+                    <textarea id="newDescription" cols="30" rows="2" class="newNote-content" placeholder="Description"
+                        maxlength="32"></textarea>
+                    <textarea id="newNote-content" cols="30" rows="10" class="newNote-content" placeholder="Content"
+                        maxlength="340"></textarea>
+                    <button class="add save" onclick="save()">
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+
+
+                <button class="add" onclick="newNote()">
+                    <i class="fas fa-plus"></i>
                 </button>
             </div>
-
-
-            <button class="add" onclick="newNote()">
-                <i class="fas fa-plus"></i>
-            </button>
-        </div>
         </div>
         <div class="calculator draggable" id="drag-3">
             <nav class="app-nav">
@@ -63,7 +66,7 @@
             </div>
             <div class="row">
                 <button class="calc-button calc-right" onclick="deleteCalc()">C</button>
-                
+
                 <button class="calc-button calc-right" onclick="addSign('/')">÷</button>
                 <button class="calc-button zero calc-right" onclick="backspace()">
                     <i class="fas fa-backspace"></i>
@@ -82,7 +85,7 @@
                 <button class="calc-button calc-right" onclick="addSign('-')">-</button>
             </div>
             <div class="row">
-                <button class="calc-button"onclick=" addNum(1)">1 </button>
+                <button class="calc-button" onclick=" addNum(1)">1 </button>
                 <button class="calc-button" onclick="addNum(2)">2</button>
                 <button class="calc-button" onclick="addNum(3)">3</button>
                 <button class="calc-button calc-right" onclick="addSign('+')">+</button>

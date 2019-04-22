@@ -1,19 +1,3 @@
-window.onload = function time() {
-  let time = new Date();
-  let hour = time.getHours();
-  let minute = time.getMinutes()
-  if (minute < 10) {
-    minute = "0" + minute;
-  }
-  document.getElementById("time").innerHTML = hour + ":" + minute;
-
-
-
-
-}
-
-
-
 
 
 
@@ -195,7 +179,7 @@ function save() {
 }
 
 let resultSpan = document.getElementById('result-span');
-let signBol = false;
+let signBol = true;
 function addNum(num){
   document.getElementById('result-span').innerHTML += num;
   signBol = false;

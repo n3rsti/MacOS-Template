@@ -63,7 +63,7 @@ body {
     border: 0;
     animation: loading 2s;
 }
-
+/*
  @keyframes loading {
     0% {
         width: 0;
@@ -84,12 +84,13 @@ body {
         opacity: 0;
         z-index: 0;
     }
-} 
+} */
 .header {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .nav {
@@ -438,12 +439,13 @@ body {
     margin-bottom: 5px;
 }
 
-#time {
+.time {
     position: absolute;
     margin: 0;
     right: 3%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    cursor: pointer;
 }
 .calculator {
     background: #4c4c4c;
@@ -494,6 +496,12 @@ body {
     font-size: 30px;
     color: #101010;
     cursor: pointer;
+}
+.calc-button:active {
+    background: #b3b2b3;
+}
+.calc-right:active {
+    background: #ba6823;
 }
 .zero {
     width: 200px;
