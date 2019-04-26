@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="img/black-logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="node_modules/time-pack.js/time.js"></script>
+    <script src="node_modules/time-pack.js/time.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:600|Montserrat:600|Arimo:400" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/interactjs@next/dist/interact.min.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -16,7 +16,7 @@
     <title>macOS</title>
 </head>
 
-<body>
+<body id="body">
     <div class="loading">
         <img src="img/apple-logo.png" alt="Apple logo" class="loading-img" id="apple-img">
         <div class="loading-tab">
@@ -98,12 +98,56 @@
                 </button>
             </div>
         </div>
+        <div class="draggable settings app" id="drag-4">
+            <nav class="app-nav">
+                <button class="red button" onclick="exit(4)"></button>
+                <button class="yellow button" onclick="minimize(4)"></button>
+                <button class="green button"></button>
+            </nav>
+            <div class="settings-content">
+                <button class="settings-app" onclick="openSettings(1)">
+                    <img src="img/wallpaper1.jpg" alt="macOS wallpaper settings icon" class="settings-img">
+                    <h2 class="settings-app-title">Wallpaper</h2>
+                </button>
+                <button class="settings-app">
+                    <img src="img/language_icon.png" alt="macOS language settings icon" class="settings-img settings-img--small">
+                    <h2 class="settings-app-title">Language</h2>
+                </button>
+                <button class="settings-app">
+                    <img src="img/date_icon.png" alt="macOS date and time icon" class="settings-img--small">
+                    <h2 class="settings-app-title">Date & Time</h2>
+                </button>
+                <div class="wallpapers" id="settings1">
+                    <button class="wallpaper" onclick="chooseWallpaper(1)">
+                        <img src="img/wallpaper1.jpg" alt="" class="wallpaper-img">
+                    </button>
+                    <button class="wallpaper" onclick="chooseWallpaper(2)">
+                        <img src="img/wallpaper2.jpg" alt="" class="wallpaper-img">
+                    </button>
+                    <button class="wallpaper" onclick="chooseWallpaper(3)">
+                        <img src="img/wallpaper3.jpg" alt="" class="wallpaper-img">
+                    </button>
+                    <button class="wallpaper" onclick="chooseWallpaper(4)">
+                        <img src="img/wallpaper4.jpg" alt="" class="wallpaper-img">
+                    </button>
+                    <button class="wallpaper" onclick="chooseWallpaper(5)">
+                        <img src="img/wallpaper5.jpg" alt="" class="wallpaper-img">
+                    </button>
+                    <div class="wallpaper-preview" id="wallpaper-preview"></div>
+                </div>
+            </div>
+            
+            
+        </div>
         <nav class="bottom-nav">
-            <button onclick="openNotepad(2)">
-                <img src="img/notepad.png" alt="">
+            <button onclick="openNotepad(2)" class="bottom-nav-button">
+                <img src="img/notepad.png" alt="macOS X Notepad icon" class="bottom-nav-img">
             </button>
-            <button onclick="openNotepad(3)">
-                <img src="img/calculator-icon.png" alt="">
+            <button onclick="openNotepad(3)" class="bottom-nav-button">
+                <img src="img/calculator-icon.png" alt="macOS X Calculator icon" class="bottom-nav-img">
+            </button>
+            <button class="bottom-nav-button" onclick="openNotepad(4)">
+                <img src="img/settings-icon.png" alt="macOS X Setting icon" class="bottom-nav-img">
             </button>
         </nav>
         <button class="apps draggable notepad-app" ondblclick="openNotepad(2)">
@@ -113,6 +157,10 @@
         <button class="apps draggable calc" ondblclick="openNotepad(3)">
             <img src="img//calculator-icon.png" alt="Calculator icon" class="app-icon">
             <h2 class="app-title">Calculator</h2>
+        </button>
+        <button class="apps draggable settings-icon" onclick="openNotepad(4)">
+            <img src="img/settings-icon.png" alt="Settings icon" class="app-icon">
+            <h2 class="app-title">Settings</h2>
         </button>
     </header>
 

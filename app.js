@@ -1,4 +1,6 @@
-
+window.onload = function(){
+  const body = document.getElementById('body');
+}
 
 
 
@@ -201,4 +203,13 @@ function backspace(){
 }
 function deleteCalc(){
   document.getElementById('result-span').innerHTML = '';
+}
+function chooseWallpaper(num){
+  document.getElementById('body').style.background = "url(img/wallpaper" + num + ".jpg) no-repeat center";
+  document.getElementById('body').style.backgroundSize = "cover";
+  document.getElementById('wallpaper-preview').style.background = "url(img/wallpaper" + num + ".jpg) no-repeat center";
+  document.getElementById('wallpaper-preview').style.backgroundSize = "cover";
+}
+function openSettings(num){
+  document.getElementById('settings' + num).style.display = "flex";
 }
