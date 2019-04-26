@@ -213,3 +213,6 @@ function chooseWallpaper(num){
 function openSettings(num){
   document.getElementById('settings' + num).style.display = "flex";
 }
+function settingsBack() {
+  document.getElementById('settings1').style.display = "none";
+}
