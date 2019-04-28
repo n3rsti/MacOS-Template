@@ -13,10 +13,11 @@
     <script src="https://cdn.jsdelivr.net/npm/interactjs@next/dist/interact.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
+    <script src="language.js"></script>
     <title>macOS</title>
 </head>
 
-<body id="body">
+<body id="body" oncontextmenu="return false;">
     <div class="loading">
         <img src="img/apple-logo.png" alt="Apple logo" class="loading-img" id="apple-img">
         <div class="loading-tab">
@@ -26,7 +27,9 @@
     <header class="header">
         <nav class="nav">
             <img src="img/black-logo.png" alt="">
-            <h3 class ="time" id="hm"></h3>
+            <h3 class="time" id="hm"></h3>
+            <h3 class="lol"></h3>
+            <h3 class="lol"></h3>
         </nav>
         <div class="draggable notepad app" id="drag-2">
             <nav class="app-nav">
@@ -106,22 +109,24 @@
                 <button class="back" onclick="settingsBack()">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                
+
             </nav>
             <div class="settings-content">
                 <button class="settings-app" onclick="openSettings(1)">
                     <img src="img/wallpaper1.jpg" alt="macOS wallpaper settings icon" class="settings-img">
                     <h2 class="settings-app-title">Wallpaper</h2>
                 </button>
-                <button class="settings-app">
-                    <img src="img/language_icon.png" alt="macOS language settings icon" class="settings-img settings-img--small">
-                    <h2 class="settings-app-title">Language</h2>
-                </button>
-                <button class="settings-app">
+                <button class="settings-app" onclick="openSettings(2)">
                     <img src="img/date_icon.png" alt="macOS date and time icon" class="settings-img--small">
                     <h2 class="settings-app-title">Date & Time</h2>
                 </button>
-                <div class="wallpapers" id="settings1">
+                <button class="settings-app">
+                    <img src="img/language_icon.png" alt="macOS language settings icon"
+                        class="settings-img settings-img--small">
+                    <h2 class="settings-app-title">Language</h2>
+                </button>
+
+                <div class="settings-section" id="settings1">
                     <button class="wallpaper" onclick="chooseWallpaper(1)">
                         <img src="img/wallpaper1.jpg" alt="" class="wallpaper-img">
                     </button>
@@ -139,18 +144,47 @@
                     </button>
                     <div class="wallpaper-preview" id="wallpaper-preview"></div>
                 </div>
+                <div class="settings-section time-section" id="settings2">
+                    <h3 class="settings-title">Time</h3>
+                    <div class="time-settings">
+                        <h3 class="time-title" >Hour: </h3> <input type="number" class="time-input" min="0" max="23" id="hour">
+                        <h3 class="time-title">Minute: </h3><input type="number" class="time-input" min="0" max="59">
+                    </div>
+                    <h3 class="settings-title">Date</h3>
+                    <div class="date-settings">
+                        <div class="date-content">
+                            <h3 class="time-title">Day: </h3>
+                            <input type="number" class="time-input" min="0" max="31">
+                        </div>
+                        <div class="date-content">
+                            <h3 class="time-title">Month: </h3>
+                            <input type="number" class="time-input" min="1" max="12">
+                        </div>
+                        <div class="date-content">
+                            <h3 class="time-title">Year: </h3>
+                            <input type="number" class="time-input" min="1950" max="2100">
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="current"><h3 class="settings-title">Current date:</h3><h3 class="current-date" id="dmy"></h3></div>
+                    <button class="add">
+                            <i class="fas fa-check"></i>
+                        </button>
+
+                </div>
             </div>
-            
-            
+
+
         </div>
         <nav class="bottom-nav">
-            <button onclick="openNotepad(2)" class="bottom-nav-button">
+            <button onclick="openNotepad(2)" class="bottom-nav-button" id="bottom2">
                 <img src="img/notepad.png" alt="macOS X Notepad icon" class="bottom-nav-img">
             </button>
-            <button onclick="openNotepad(3)" class="bottom-nav-button">
+            <button onclick="openNotepad(3)" class="bottom-nav-button" id="bottom3">
                 <img src="img/calculator-icon.png" alt="macOS X Calculator icon" class="bottom-nav-img">
             </button>
-            <button class="bottom-nav-button" onclick="openNotepad(4)">
+            <button class="bottom-nav-button" onclick="openNotepad(4)" id="bottom4">
                 <img src="img/settings-icon.png" alt="macOS X Setting icon" class="bottom-nav-img">
             </button>
         </nav>

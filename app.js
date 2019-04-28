@@ -7,8 +7,6 @@ window.onload = function(){
 
 
 
-
-
 // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -65,10 +63,12 @@ window.dragMoveListener = dragMoveListener;
 
 function exit(a) {
   document.getElementById("drag-" + a).style.display = "none";
+  document.getElementById('bottom' + a).style.borderBottom = "0";
 }
 
 function minimize(a) {
   document.getElementById("drag-" + a).style.display = "none";
+  document.getElementById('bottom' + a).style.borderBottom = "5px solid white";
 }
 function openNotepad(a) {
   document.getElementById("drag-" + a).style.display = "flex";
@@ -210,9 +210,11 @@ function chooseWallpaper(num){
   document.getElementById('wallpaper-preview').style.background = "url(img/wallpaper" + num + ".jpg) no-repeat center";
   document.getElementById('wallpaper-preview').style.backgroundSize = "cover";
 }
+var settingsNum;
 function openSettings(num){
   document.getElementById('settings' + num).style.display = "flex";
+  settingsNum = num;
 }
 function settingsBack() {
-  document.getElementById('settings1').style.display = "none";
+  document.getElementById('settings' + settingsNum).style.display = "none";
 }
