@@ -1,6 +1,9 @@
 window.onload = function(){
   const body = document.getElementById('body');
 }
+import  { time }   from './node_modules/time-pack.js/time.js';
+time();
+
 
 
 
@@ -217,4 +220,12 @@ function openSettings(num){
 }
 function settingsBack() {
   document.getElementById('settings' + settingsNum).style.display = "none";
+}
+function setTime(day, month, year, hour, minute){
+  let setDay = document.getElementById('set-day');
+  let setMonth = document.getElementById('set-month');
+  let setYear = document.getElementById('set-year');
+  let setHour = document.getElementById('set-hour');
+  let setMinute = document.getElementById('set-minute');
+  
 }
