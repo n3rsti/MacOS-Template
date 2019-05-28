@@ -1,8 +1,7 @@
 window.onload = function(){
   const body = document.getElementById('body');
 }
-import  { time }   from './node_modules/time-pack.js/time.js';
-time();
+
 
 
 
